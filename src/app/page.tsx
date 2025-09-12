@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -25,7 +27,6 @@ export default function Page() {
 
   return (
     <div className="min-h-dvh bg-black text-white selection:bg-red-500 selection:text-white">
-      <Meta />
       <BackgroundFX />
 
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/10">
