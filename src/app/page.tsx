@@ -64,7 +64,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/80 max-w-prose">
-              High-end DJ services for corporate events and elevated private parties. Clean transitions, tasteful energy, and a modern sound that fits the room.
+              It’s simple: I love this music. My passion is blending the warmth of Caribbean rhythms with the soul of Chicago beats to create a vibe that’s impossible not to dance to. Let's party!
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <motion.button
@@ -113,7 +113,7 @@ export default function Page() {
         <Card>
           <h2 className="text-2xl sm:text-3xl font-extrabold">About</h2>
           <p className="mt-4 text-base sm:text-lg text-white/80 leading-relaxed">
-            Since 2015, DJ Sandía has been blending <span className="font-semibold">Martinique vibes</span> with <span className="font-semibold">Chi‑town house</span>, spinning everything from dancehall and reggaeton to House, afro house and Brazilian funk. My sets are built on <span className="font-semibold">clean transitions</span> and <span className="font-semibold">live mashups</span> that turn familiar tracks into something brand new. I’ve rocked stages from <span className="font-semibold">Navy Pier</span> to birthday parties, with one simple rule: <span className="font-semibold">no standing allowed</span>.
+            Since 2015, I’ve been weaving Martinique heat into my Chicago house — not by pressing play, but by reading the room and making records talk to each other. Expect clean, seamless transitions, live mashups on the fly, and grooves that move from dancehall and reggaeton to house, afro house, and Brazilian funk. I’ve played everything from Navy Pier to living‑room birthdays; the goal is the same every time: keep it elegant, keep it moving, and make standing still impossible.
           </p>
         </Card>
       </section>
