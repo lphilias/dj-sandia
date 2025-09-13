@@ -113,7 +113,7 @@ export default function Page() {
         <Card>
           <h2 className="text-2xl sm:text-3xl font-extrabold">About</h2>
           <p className="mt-4 text-base sm:text-lg text-white/80 leading-relaxed">
-            For 5 years, I've been blending <span className="font-semibold">Martinique vibes</span> with <span className="font-semibold">Chi‑town house</span>, spinning everything from dancehall and reggaeton to House, afro house and Brazilian funk. My sets are built on <span className="font-semibold">clean transitions</span> and <span className="font-semibold">live mashups</span> that turn familiar tracks into something brand new. I've rocked stages from <span className="font-semibold">Navy Pier</span> to birthday parties, with one simple rule: <span className="font-semibold">no standing allowed</span>.
+            Since 2015, DJ Sandía has been blending <span className="font-semibold">Martinique vibes</span> with <span className="font-semibold">Chi‑town house</span>, spinning everything from dancehall and reggaeton to House, afro house and Brazilian funk. My sets are built on <span className="font-semibold">clean transitions</span> and <span className="font-semibold">live mashups</span> that turn familiar tracks into something brand new. I’ve rocked stages from <span className="font-semibold">Navy Pier</span> to birthday parties, with one simple rule: <span className="font-semibold">no standing allowed</span>.
           </p>
         </Card>
       </section>
