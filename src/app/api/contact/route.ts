@@ -45,7 +45,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Bookings <onboarding@resend.dev>",   // allowed in test
+        from: "Bookings Sandia <onboarding@resend.dev>",   // allowed in test
         to: [to],
         reply_to: email || undefined,
         subject: "New Booking Request — Dj Sandia",
