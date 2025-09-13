@@ -64,7 +64,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/80 max-w-prose">
-              It’s simple: I love this music. My passion is blending the warmth of Caribbean rhythms with the soul of Chicago beats to create a vibe that’s impossible not to dance to. Let's party!
+              It’s simple: I love this music. My passion is blending the warmth of Caribbean rhythms with the soul of Chicago beats to create a vibe that’s impossible not to dance to. Let’s party!
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <motion.button
