@@ -1,8 +1,8 @@
 // src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";        // ensure Node runtime
-export const dynamic = "force-dynamic"; // avoid caching any responses
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 type ContactPayload = {
   name?: string;
@@ -18,10 +18,7 @@ export async function POST(req: Request) {
       (await req.json()) as ContactPayload;
 
     if (!name || !email) {
-      return NextResponse.json(
-        { ok: false, error: "Missing required fields: name, email" },
-        { status: 400 }
-      );
+      return NextResponse.json({ ok: false, error: "Missing required fields: name, email" }, { status: 400 });
     }
 
     const text = [
@@ -31,19 +28,16 @@ export async function POST(req: Request) {
       location ? `Location: ${location}` : null,
       "",
       message ? `Message:\n${message}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+    ].filter(Boolean).join("\n");
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
-      return NextResponse.json(
-        { ok: false, error: "Missing RESEND_API_KEY (set it in Vercel → Project → Settings → Environment Variables)" },
-        { status: 500 }
-      );
+      return NextResponse.json({ ok: false, error: "Missing RESEND_API_KEY" }, { status: 500 });
     }
 
-    // Use Resend onboarding sender for initial tests (works without domain verification).
+    // Use test recipient when on unverified/test setup
+    const to = process.env.CONTACT_TO || "l.a.philias@gmail.com";
+
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -51,8 +45,8 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Bookings <onboarding@resend.dev>", // swap to a verified domain later
-        to: ["djsandia312@gmail.com"],
+        from: "Bookings <onboarding@resend.dev>",   // allowed in test
+        to: [to],
         reply_to: email || undefined,
         subject: "New Booking Request — Dj Sandia",
         text,
@@ -61,7 +55,6 @@ export async function POST(req: Request) {
 
     if (!r.ok) {
       const errText = await r.text();
-      // Log details to Vercel function logs for easy debugging
       console.error("[/api/contact] Resend error:", r.status, errText);
       return NextResponse.json({ ok: false, error: errText, status: r.status }, { status: 502 });
     }
